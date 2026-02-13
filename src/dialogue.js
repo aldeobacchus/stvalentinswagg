@@ -22,48 +22,78 @@ export const dialogue = {
   nodes: [
     {
       id: 1,
-      question: "Dis, ça te dirait d'être mon Valentin pour la Saint-Valentin ?",
-      characterLeftImage: "/assets/images/gab1.png", // Exemple
-      characterRightImage: "/assets/images/nina1.png", // Exemple
-      backgroundImage: "/assets/images/background_park.png", // Exemple
+      question: "cc ça va ^^ ?",
+      characterLeftImage: "/assets/images/gab1.png",
+      characterRightImage: "/assets/images/nina1.png",
+      backgroundImage: "/assets/images/background_park.png",
       choices: [
         {
-          text: "Oui, avec grand plaisir !",
+          text: " oui oui !!!",
           next: 2,
         },
         {
-          text: "Non, désolé(e).",
-          next: "end_failure",
+          text: "euh non...",
+          next: 3,
         },
       ],
     },
     {
       id: 2,
-      question: "Super ! Pour fêter ça, que préfères-tu ?",
-      characterLeftImage: "/assets/images/char_left_happy.png", // Exemple
-      characterRightImage: "/assets/images/char_right_happy.png", // Exemple
+      question: "tfk demain ? Tu sais le 14 Fevrier de la st valentin",
+      characterLeftImage: "/assets/images/gab1.png",
+      characterRightImage: "/assets/images/nina1.png",
       backgroundImage: "/assets/images/background_cafe.png", // Exemple
       choices: [
         {
-          text: "Un dîner romantique.",
-          next: "end_success",
+          text: "je suis pas dispo dsl...",
+          next: "end_failure",
         },
         {
-          text: "Une soirée film à la maison.",
+          text: "rien, pour l'instant ?...",
+          next: 4,
+        },
+      ],
+    },
+    {
+      id: 3,
+      question: "J'ai quelque chose pour te remonter le moral...",
+      characterLeftImage: "/assets/images/gab1.png",
+      characterRightImage: "/assets/images/nina1.png",
+      backgroundImage: "/assets/images/background_cafe.png", // Exemple
+      choices: [
+        {
+          text: "Ok dit moi",
+          next: 2,
+        }
+      ],
+    },
+    {
+      id: 4,
+      question: "Je t'invite.... au restaurant !!! Accepte tu ?",
+      characterLeftImage: "/assets/images/gab1.png",
+      characterRightImage: "/assets/images/nina1.png",
+      backgroundImage: "/assets/images/background_cafe.png", // Exemple
+      choices: [
+        {
+          text: "ah non desole",
+          next: "end_failure",
+        },
+        {
+          text: "oui !!!!!",
           next: "end_success",
         },
       ],
     },
     {
       id: "end_success",
-      question: "Parfait ! Alors rendez-vous le 14 février. Voici ton invitation !",
+      question: "Youhouuuu Rendez vous demain 14 Fevrier !! Au restaurant Maora à 21h !",
       isEnd: true,
       isSuccess: true,
       endImage: "/assets/images/invitation.png", // L'invitation finale
     },
     {
       id: "end_failure",
-      question: "Oh... d'accord. C'est la fin du jeu pour toi !",
+      question: "ah....... tant pis ^^",
       isEnd: true,
       isSuccess: false,
       endImage: "/assets/images/game_over.png", // Image de game over

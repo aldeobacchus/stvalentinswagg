@@ -46,7 +46,7 @@ const endImage = computed(() => currentNode.value?.endImage);
       <img v-if="endImage" :src="endImage" alt="Image de fin" class="end-image" />
       <p class="end-text">{{ currentNode.question }}</p>
       <button v-if="!currentNode.isSuccess" @click="restartGame" class="choice-button restart-button">
-        Recommencer
+        Reload
       </button>
     </div>
 
@@ -147,13 +147,15 @@ const endImage = computed(() => currentNode.value?.endImage);
 /* Conteneur pour les boutons de choix */
 .choices-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Par défaut en ligne */
+  flex-wrap: wrap; /* Permet le retour à la ligne si pas assez de place */
   gap: 10px;
+  justify-content: center; /* Centre les boutons */
 }
 
 /* Styles pour les boutons */
 .choice-button {
-  background-color: #6c5ce7;
+  background-color: #ff0066; /* Rose/rouge de Saint-Valentin */
   color: white;
   border: none;
   border-radius: 15px;
@@ -162,10 +164,12 @@ const endImage = computed(() => currentNode.value?.endImage);
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
   font-family: 'Comic Sans MS', cursive, sans-serif;
+  flex-grow: 0; /* Ne prend pas toute la largeur disponible */
+  white-space: nowrap; /* Empêche le texte de se couper */
 }
 
 .choice-button:hover {
-  background-color: #a29bfe;
+  background-color: #e91e63; /* Teinte plus foncée au survol */
   transform: translateY(-2px);
 }
 
@@ -210,7 +214,8 @@ const endImage = computed(() => currentNode.value?.endImage);
 @media (max-width: 767px) {
   .game-container {
     justify-content: flex-start; /* Aligne les éléments en haut */
-    padding-top: 20px;
+    padding-top: 10px; /* Réduit le padding top */
+    padding-bottom: 10px; /* Réduit le padding bottom */
   }
 
   /* Les images de personnages ne sont plus absolues sur mobile */
@@ -218,9 +223,10 @@ const endImage = computed(() => currentNode.value?.endImage);
     position: static; /* Rejoint le flux normal */
     height: auto; /* La hauteur sera gérée par le flexbox */
     width: 100%; /* Prend toute la largeur disponible */
-    max-width: 200px; /* Limite la taille des personnages */
+    max-width: 150px; /* Limite la taille des personnages encore plus */
+    max-height: 30vh; /* Nouvelle limite de hauteur relative au viewport */
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Réduit la marge */
   }
 
   /* Ordre des éléments sur mobile */
