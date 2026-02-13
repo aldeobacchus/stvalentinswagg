@@ -1,11 +1,18 @@
-<script setup></script>
+<script setup>
+import Home from './Home.vue';
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <Home />
 </template>
 
-<style scoped></style>
+<style>
+/* Styles globaux pour s'assurer que l'application prend tout l'écran sans marges */
+html, body, #app {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Empêche le défilement de la page */
+}
+</style>
