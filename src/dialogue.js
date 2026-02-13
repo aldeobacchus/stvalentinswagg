@@ -86,17 +86,17 @@ export const dialogue = {
     },
     {
       id: "end_success",
-      question: "Youhouuuu Rendez vous demain 14 Fevrier !! Au restaurant Maora à 21h !",
+      question: "",
       isEnd: true,
       isSuccess: true,
-      endImage: "/assets/images/invitation.png", // L'invitation finale
+      endImage: "/assets/images/win.png", // L'invitation finale
     },
     {
       id: "end_failure",
       question: "ah....... tant pis ^^",
       isEnd: true,
       isSuccess: false,
-      endImage: "/assets/images/game_over.png", // Image de game over
+      endImage: "/assets/images/fail.png", // Image de game over
     },
   ],
 };

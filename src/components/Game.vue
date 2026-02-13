@@ -43,11 +43,12 @@ const endImage = computed(() => currentNode.value?.endImage);
   <div class="game-container" :style="backgroundStyle">
     <!-- Écran de fin -->
     <div v-if="currentNode.isEnd" class="end-screen">
-      <img v-if="endImage" :src="endImage" alt="Image de fin" class="end-image" />
-      <p class="end-text">{{ currentNode.question }}</p>
-      <button v-if="!currentNode.isSuccess" @click="restartGame" class="choice-button restart-button">
-        Reload
-      </button>
+        <img v-if="currentNode.isSuccess" src="/assets/images/youhou.png" class="youhou" />
+        <img v-if="endImage" :src="endImage" alt="Image de fin" :class="{'end-image': !currentNode.isSuccess, 'end-image-success': currentNode.isSuccess}" />
+        <p v-if="!currentNode.isSuccess" :class="{'end-text': !currentNode.isSuccess, 'end-success-text': currentNode.isSuccess}">{{ currentNode.question }}</p>
+        <button v-if="!currentNode.isSuccess" @click="restartGame" class="choice-button restart-button">
+            Reload
+        </button>
     </div>
 
     <!-- Contenu du jeu (non affiché si c'est une fin) -->
@@ -184,10 +185,21 @@ const endImage = computed(() => currentNode.value?.endImage);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0;
   z-index: 20;
 }
 
+.end-screen-success {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
 .end-image {
   max-width: 90%;
   max-height: 80%;
@@ -206,8 +218,22 @@ const endImage = computed(() => currentNode.value?.endImage);
   color: #333;
 }
 
+.end-success-text {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  color: #333;
+  width: 50%;
+}
+
 .restart-button {
   margin-top: 20px;
+  background-color: #ffffff;
+  color: black;
 }
 
 /* Styles pour les écrans mobiles */
