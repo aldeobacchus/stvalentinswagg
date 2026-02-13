@@ -53,7 +53,7 @@ const endImage = computed(() => currentNode.value?.endImage);
     <!-- Contenu du jeu (non affiché si c'est une fin) -->
     <template v-else>
       <div class="bubble-wrapper question-wrapper">
-        <img src="/assets/images/bubble_question.png" alt="Bulle de question" class="bubble-image" />
+        <img src="/assets/images/bubble_question_t.png" alt="Bulle de question" class="bubble-image" />
         <p class="bubble-text question-text">{{ currentNode.question }}</p>
       </div>
 
@@ -61,7 +61,7 @@ const endImage = computed(() => currentNode.value?.endImage);
       <img v-if="characterRightImage" :src="characterRightImage" alt="Personnage droit" class="character-image right" />
 
       <div class="bubble-wrapper choices-wrapper">
-        <img src="/assets/images/bubble_choices.png" alt="Bulle de choix" class="bubble-image" />
+        <img src="/assets/images/bubble_choices_t.png" alt="Bulle de choix" class="bubble-image" />
         <div class="choices-container">
           <button
             v-for="choice in currentNode.choices"
@@ -163,7 +163,7 @@ const endImage = computed(() => currentNode.value?.endImage);
   font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   flex-grow: 0; /* Ne prend pas toute la largeur disponible */
   white-space: nowrap; /* Empêche le texte de se couper */
 }
@@ -201,7 +201,7 @@ const endImage = computed(() => currentNode.value?.endImage);
   padding: 10px 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
   color: #333;
 }
