@@ -40,7 +40,7 @@ export const dialogue = {
     {
       id: 2,
       question: "tfk demain ? Tu sais le 14 Fevrier de la st valentin",
-      characterLeftImage: "/assets/images/gab1.png",
+      characterLeftImage: "/assets/images/gab2.png",
       characterRightImage: "/assets/images/nina1.png",
       backgroundImage: "/assets/images/background_cafe.png", // Exemple
       choices: [
@@ -70,7 +70,7 @@ export const dialogue = {
     {
       id: 4,
       question: "Je t'invite.... au restaurant !!! Accepte tu ?",
-      characterLeftImage: "/assets/images/gab1.png",
+      characterLeftImage: "/assets/images/gab3.png",
       characterRightImage: "/assets/images/nina1.png",
       backgroundImage: "/assets/images/background_cafe.png", // Exemple
       choices: [
