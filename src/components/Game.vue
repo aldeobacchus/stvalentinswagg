@@ -22,10 +22,13 @@ function restartGame() {
 
 // Calcule l'URL de l'image de fond
 const backgroundStyle = computed(() => {
+  const gradient = 'linear-gradient(to bottom right, #ff7e5f, #feb47b, #ff0066, #990033)';
   if (currentNode.value?.backgroundImage) {
-    return { backgroundImage: `url(${currentNode.value.backgroundImage})` };
+    // Si une image de fond est spécifiée, la mettre par-dessus le dégradé
+    return { backgroundImage: `url(${currentNode.value.backgroundImage}), ${gradient}` };
   }
-  return {};
+  // Sinon, utiliser uniquement le dégradé
+  return { backgroundImage: gradient };
 });
 
 // Images des personnages
@@ -84,7 +87,6 @@ const endImage = computed(() => currentNode.value?.endImage);
   height: 100vh;
   width: 100vw;
   padding: 20px;
-  background-color: #f0f0f0;
   background-size: cover;
   background-position: center;
   transition: background-image 0.5s ease-in-out;
